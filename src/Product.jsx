@@ -33,7 +33,6 @@ const PutButton = styled.button`
 function Product(props) {
     const url = props.image
     const title = props.title
-    const price = props.price
 
     const ImgStyle = {
         width: "160px",
@@ -41,14 +40,19 @@ function Product(props) {
     };
 
     const [count, setCount] = useState(0);
+    const [price, setPrice] = useState(0);
+
 
     return(
         <StyledDiv>
-            <img src={url} style={ImgStyle} /><br />
+            <img src={url} style={ImgStyle} alt={title} /><br />
             <span>{title}</span><br />
-            {price}<br />
+            <span style={{
+                color: '#be2e22',
+            }}>{props.price}</span><br />
             <QunButton onClick={() => {
                 setCount(count + 1)
+                setPrice(price * count)
                 }}>
                 <HiPlusSm />
             </QunButton>
@@ -57,6 +61,7 @@ function Product(props) {
                 if(count === 0){
                 }else{
                     setCount(count - 1)
+                    setPrice(count * count)
                 }}}>
                 <HiMinusSm />
             </QunButton><br />

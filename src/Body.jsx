@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import styled from 'styled-components';
 import Product from "./Product";
-import 다운로드 from './다운로드.jpeg';
 
 const StlyedBody = styled.body`
     display: flex;
