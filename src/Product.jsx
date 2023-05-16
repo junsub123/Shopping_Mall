@@ -30,29 +30,26 @@ const PutButton = styled.button`
     }
 `
 
-function Product(props) {
-    const url = props.image
-    const title = props.title
+function Product({img, title, price}) {
 
     const ImgStyle = {
         width: "160px",
         height: "170px",
     };
 
-    const [count, setCount] = useState(0);
-    const [price, setPrice] = useState(0);
-
+    const [count, setCount] = useState(1);
+    const [_price, setPrice] = useState(price);
 
     return(
         <StyledDiv>
-            <img src={url} style={ImgStyle} alt={title} /><br />
+            <img src={img} style={ImgStyle} alt={title} /><br />
             <span>{title}</span><br />
             <span style={{
                 color: '#be2e22',
-            }}>{props.price}</span><br />
+            }}>{_price}원</span><br />
             <QunButton onClick={() => {
                 setCount(count + 1)
-                setPrice(price * count)
+                setPrice(_price + price)
                 }}>
                 <HiPlusSm />
             </QunButton>
@@ -61,18 +58,18 @@ function Product(props) {
                 if(count === 0){
                 }else{
                     setCount(count - 1)
-                    setPrice(count * count)
+                    setPrice(_price - price)
                 }}}>
                 <HiMinusSm />
             </QunButton><br />
             
             <PutButton onClick={(setCount) => {
-                if(count != 0){
-                    alert(`${count}개를 장바구니에 담았습니다.`);
+                if(count !== 0){
+                    alert(`${title} ${count}개를 장바구니에 담았습니다.`)
                 }else{
-                    alert('수량을 정해주세요.');
+                    alert('수량을 정해주세요.')
                 }
-                return null;
+                return null
             }}>장바구니 담기</PutButton>
         </StyledDiv>
     )

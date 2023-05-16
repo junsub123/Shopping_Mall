@@ -46,7 +46,7 @@ function App(props) {
           </div>
 
           {/* 쇼핑몰 로고 */}
-          <NavLink to="/"><img src="img/logo.png" style={{
+          <NavLink to="/"><img src="img/logo.png" alt="logo" style={{
             width: '200px',
             height: '90px',
             marginRight: '39%',
