@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Route, Routes } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Body from './Body';
 import Header from "./header/Header";
 import Cart from './header/Cart';
@@ -15,29 +16,35 @@ const StyledHeader = styled.header`
 export default function App(props) {
   return (
 
+    <div>
       <div>
-        <StyledHeader>
+        <Helmet>
+          <title>숍핑몰</title>
+        </Helmet>
+      </div>
 
-          <Header />
+      <StyledHeader>
 
-        </StyledHeader>
+        <Header />
 
-            <div style={{
+      </StyledHeader>
+
+      <div style={{
         margin: '0 17% 0 18%',
       }}>
-            
-            <Routes>
-              <Route path="/" element={<Body />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/signup' element={<Signup />} />
-            </Routes>
-            
-            </div>
-          
-          <Footer />
+
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+        </Routes>
 
       </div>
+
+      <Footer />
+
+    </div>
 
   );
 }

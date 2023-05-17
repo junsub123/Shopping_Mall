@@ -35,13 +35,11 @@ function Signup() {
     let [id, setId] = useState();
     let [pwd, setPwd] = useState();
     let [repwd, setRepwd] = useState();
-    let [pho, setPho] = useState();
     let [name, setName] = useState();
 
     let [idMsg, setIdMsg] = useState();
     let [pwdMsg, setPwdMsg] = useState();
     let [repwdMsg, setRepwdMsg] = useState();
-    let [phoMsg, setPhoMsg] = useState();
     let [nameMsg, setNameMsg] = useState();
 
     const handleId = (event) => {
@@ -55,10 +53,6 @@ function Signup() {
 
     const handleRepwd = (event) => {
         setRepwd(event.target.value)
-    }
-
-    const handlePho = (event) => {
-        setPho(event.target.value)
     }
 
     const handleName = (event) => {
@@ -84,7 +78,7 @@ function Signup() {
 
                 <StyledDiv>
                     <StyledLabel>비밀번호 재확인</StyledLabel><br />
-                    <StyledInput id="repwd" type="password" onChange={handleRepwd} /><br />
+                    <StyledInput id="repwd" type="password" onChange={handleRepwd}/><br />
                     {repwdMsg}<br />
                 </StyledDiv>
 
@@ -92,12 +86,6 @@ function Signup() {
                     <StyledLabel>이름</StyledLabel><br />
                     <StyledInput id="name" onChange={handleName} /><br />
                     {nameMsg}<br />
-                </StyledDiv>
-
-                <StyledDiv>
-                    <StyledLabel>전화번호</StyledLabel><br />
-                    <StyledInput id="pho" onChange={handlePho} /><br />
-                    {phoMsg}<br />
                 </StyledDiv>
 
                 <StyledSubmit type="submit" value="가입하기"
@@ -112,10 +100,10 @@ function Signup() {
                             setPwdMsg("필수 정보입니다.");
                             setIdMsg("");
                         } else if (!repwd) {
-                            if (pwd.value === repwd.value) {
-                                setRepwdMsg("");
-                            } else {
+                            if (pwd.value != repwd.value) {
                                 setRepwdMsg("비밀번호가 일치하지 않습니다.");
+                            } else {
+                                setRepwdMsg("");
                             }
                             document.getElementById('repwd').focus();
                             setRepwdMsg("필수 정보입니다.");
@@ -124,10 +112,6 @@ function Signup() {
                             document.getElementById('name').focus();
                             setNameMsg("필수 정보입니다.");
                             setRepwdMsg("");
-                        } else if (!pho) {
-                            document.getElementById('pho').focus();
-                            setPhoMsg("필수 정보입니다.");
-                            setNameMsg("");
                         }else{
                             alert('회원가입을 성공했습니다!');
                             navigate('/login');
