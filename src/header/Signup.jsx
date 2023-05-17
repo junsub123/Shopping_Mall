@@ -100,7 +100,7 @@ function Signup() {
                     {phoMsg}<br />
                 </StyledDiv>
 
-                <StyledSubmit type="submit" value="회원가입"
+                <StyledSubmit type="submit" value="가입하기"
 
                     onClick={(e) => {
                         e.preventDefault();
