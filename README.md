@@ -1,2 +1,4 @@
-간단하게 리액트로 만든 쇼핑몰
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h1>간단한 쇼핑몰</h1>
+
+react로 만들어본 간단한 쇼핑몰 <br />
+기능구현에 있어선 아직 부족
