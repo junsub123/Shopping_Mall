@@ -32,17 +32,23 @@ export default function Header() {
     const style = {
         textDecoration: 'none',
         color: 'black',
+        marginLeft: '10px',
     }
+
+    let isLogin = false;
 
     return (
         <div style={{marginBottom: '70px',}}>
             <div style={{
                 marginRight: '18%',
                 marginTop: '5px',
-            }}>
-                <NavLink to="/login" style={style}>로그인</NavLink>&nbsp;&nbsp;&nbsp;
-                <NavLink to="/signup" style={style}>회원가입</NavLink>&nbsp;&nbsp;&nbsp;
-                <NavLink to="/" style={style}>고객센터</NavLink><br />
+            }}> 
+            {isLogin === false ? <><NavLink to="/login" style={style} isLogin={isLogin}>로그인</NavLink>
+            <NavLink to="/signup" style={style}>회원가입</NavLink>
+            <NavLink to="/" style={style}>고객센터</NavLink><br /></> : 
+            <><NavLink to="/login" style={style} isLogin={isLogin}>로그아웃</NavLink>
+            <NavLink to="/" style={style}>고객센터</NavLink><br /></>}
+                
 
                 {/* 쇼핑몰 로고 */}
                 <NavLink to="/"><img src="img/logo.png" alt="logo" style={{
@@ -80,9 +86,7 @@ export default function Header() {
                 </CartButton></NavLink>
                 
                 {/* 사람 아이콘 */}
-                <NavLink to="/myinfo"><CartButton onChange={() => {
-
-                }}>
+                <NavLink to="/myinfo"><CartButton>
                     <BsFillPersonFill style={{
                         width: '40px',
                         height: '40px',

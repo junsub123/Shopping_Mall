@@ -24,9 +24,8 @@ const StyledSubmit = styled.input`
     margin-bottom: 20px;
 `
 
-function Login(props) {
+function Login({isLogin}) {
 
-    let mode = false;
     const navigate = useNavigate();
 
     let [id, setId] = useState();
@@ -71,10 +70,11 @@ function Login(props) {
                         setPwdMsg("비밀번호를 입력해주세요.");
                         setIdMsg("");
                     }else{
+                        isLogin = true;
+                        console.log(isLogin);
                         setPwdMsg("");
                         setIdMsg("");
                         alert(`${id}님 환영합니다 !`);
-                        mode = true;
                         navigate('/');
                     }
                 }} />
