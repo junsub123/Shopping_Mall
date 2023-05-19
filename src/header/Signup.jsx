@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useCallback } from "react";
 import styled from "styled-components";
 import {useNavigate} from 'react-router-dom';
 
@@ -28,15 +28,18 @@ const StyledSubmit = styled.input`
 `
 
 
+
 function Signup() {
 
     const navigate = useNavigate();
 
+    // 이름, 이메일, 비밀번호, 비밀번호 재입력
     let [id, setId] = useState();
     let [pwd, setPwd] = useState();
     let [repwd, setRepwd] = useState();
     let [name, setName] = useState();
 
+    // 오류메시지 상태저장
     let [idMsg, setIdMsg] = useState();
     let [pwdMsg, setPwdMsg] = useState();
     let [repwdMsg, setRepwdMsg] = useState();

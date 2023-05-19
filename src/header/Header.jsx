@@ -80,7 +80,7 @@ export default function Header() {
                 </CartButton></NavLink>
                 
                 {/* 사람 아이콘 */}
-                <NavLink to="/cart"><CartButton onChange={() => {
+                <NavLink to="/myinfo"><CartButton onChange={() => {
 
                 }}>
                     <BsFillPersonFill style={{

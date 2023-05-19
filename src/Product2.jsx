@@ -38,7 +38,7 @@ function Product2({img, title, price}) {
     const [_price, setPrice] = useState(price);
 
     return(
-        <StyledDiv>
+        <StyledDiv price={_price}>
                 <img src={img} style={ImgStyle} alt={title} />
                 <StyledSpan>{title}</StyledSpan>
             <QunButton onClick={() => {
