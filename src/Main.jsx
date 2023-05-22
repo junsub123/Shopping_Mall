@@ -55,7 +55,7 @@ const products = [
         "id": 8,
         "title": "오렌지",
         "price": 3000,
-        "img": "https://shop.biumfood.com/upload/images/20200410094658_249534.jpg"
+        "img": "https://blog.kakaocdn.net/dn/bOvCgv/btqCB8aeTdJ/iCr0k2bkWZ5gFR4fVDFWeK/img.jpg"
       },
       {
         "id": 9,

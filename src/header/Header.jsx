@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { BsSearch, BsCart, BsFillPersonFill } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
+import logo from './img/logo.png'
 
 const StyledInput = styled.input`
     width: 300px;
@@ -51,7 +52,7 @@ export default function Header() {
                 
 
                 {/* 쇼핑몰 로고 */}
-                <NavLink to="/"><img src="img/logo.png" alt="logo" style={{
+                <NavLink to="/"><img src={logo} alt="logo" style={{
                     width: '200px',
                     height: '90px',
                     marginRight: '30%',
