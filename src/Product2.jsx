@@ -33,34 +33,17 @@ function Product2({img, title, price}) {
         width: "120px",
         height: "130px",
     };
-
-    const [count, setCount] = useState(1);
-    const [_price, setPrice] = useState(price);
-
+    
     return(
-        <StyledDiv price={_price}>
+        <StyledDiv price={price}>
+                <input type="checkbox" value={false} />
                 <img src={img} style={ImgStyle} alt={title} />
                 <StyledSpan>{title}</StyledSpan>
-            <QunButton onClick={() => {
-                setCount(count + 1)
-                setPrice(_price + price)
-                }}>
-                <HiPlusSm />
-            </QunButton>
-            {count}
-            <QunButton onClick={() => {
-                if(count === 0){
-                }else{
-                    setCount(count - 1)
-                    setPrice(_price - price)
-                }}}>
-                <HiMinusSm />
-            </QunButton>
             <StyledSpan style={{
                 fontSize: '18px',
                 color: '#be2e22',
                 marginLeft: '40px',
-            }}>{_price}원</StyledSpan>
+            }}>{price}원</StyledSpan>
         </StyledDiv>
     )
 }

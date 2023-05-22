@@ -37,6 +37,7 @@ function Product({img, title, price}) {
         height: "170px",
     };
 
+    const [list, setList] = useState([]);
     const [count, setCount] = useState(1);
     const [_price, setPrice] = useState(price);
 
@@ -66,6 +67,13 @@ function Product({img, title, price}) {
             <PutButton onClick={(setCount) => {
                 if(count !== 0){
                     alert(`${title} ${count}개를 장바구니에 담았습니다.`)
+                    setList([{
+                        img,
+                        title,
+                        price,
+                        count
+                    }])
+                    console.log(list);
                 }else{
                     alert('수량을 정해주세요.')
                 }

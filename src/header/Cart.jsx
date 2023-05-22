@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Product2 from '../Product2';
@@ -20,7 +20,7 @@ const StyledButton = styled.button`
 function Cart(props) {
 
     const navigate = useNavigate();
-    let totalPrice = 0;
+    let [totalPrice, setTotalprice] = useState(0);
 
     return (
         <>
@@ -29,25 +29,23 @@ function Cart(props) {
             <div style={{ display: 'flex', }}>
                 <StyledDiv style={{ width: '60%', }}>
 
+                    
                     <Product2
                         img="http://cookieforest1.imghost.cafe24.com/cookieforest/pie/pie12.jpg"
                         title="칸쵸"
                         price={1200}
-                        {...totalPrice += props.price}
                     />
 
                     <Product2
                         img="https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/8834932052257-1c6cd1f7-8c39-43a4-bb6d-b1277da352e7.jpg"
                         title="사과(박스)"
                         price={23000}
-                        {...totalPrice += props.price}
                     />
 
                     <Product2
                         img="https://shopping-phinf.pstatic.net/main_8403495/84034955612.1.jpg?type=f300"
                         title="헬스장"
                         price={500000000}
-                        {...totalPrice += props.price}
                     />
 
                 </StyledDiv>
@@ -71,9 +69,9 @@ function Cart(props) {
                     </div>
 
                     <div style={{ textAlign: 'center', }}>
-                        <h3>총 결제 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{0}원</h3>
+                        <h3>총 결제 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{totalPrice}원</h3>
                         <StyledButton onClick={() => {
-                            alert("주문을 성공했습니다.");
+                            alert("주문을 성공했습니다, 주문해주셔서 감사합니다!");
                             navigate('/');
                         }}>주문하기</StyledButton>
                     </div>
