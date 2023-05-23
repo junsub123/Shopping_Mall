@@ -102,14 +102,9 @@ function Signup() {
                             document.getElementById('pwd').focus();
                             setPwdMsg("필수 정보입니다.");
                             setIdMsg("");
-                        } else if (!repwd) {
-                            if (pwd.value != repwd.value) {
-                                setRepwdMsg("비밀번호가 일치하지 않습니다.");
-                            } else {
-                                setRepwdMsg("");
-                            }
+                        } else if (pwd != repwd) {
                             document.getElementById('repwd').focus();
-                            setRepwdMsg("필수 정보입니다.");
+                            setRepwdMsg("비밀번호와 일치하지 않습니다.");
                             setPwdMsg("");
                         } else if (!name) {
                             document.getElementById('name').focus();

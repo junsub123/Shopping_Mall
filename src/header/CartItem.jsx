@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import styled from "styled-components";
-import {HiPlusSm, HiMinusSm} from 'react-icons/hi';
 
 const StyledDiv = styled.div`
     width: 97%;
@@ -13,30 +12,26 @@ const StyledDiv = styled.div`
     align-items : center;
 `
 
-const QunButton = styled.button`
-    border: none;
-    background-color: white;
-    &:hover{
-        background-color : yellow;
-        color : black
-    }
-    margin: 0 15px 0 15px;
-`
-
 const StyledSpan = styled.span`
     margin: 20px;
 `
 
-function Product2({img, title, price}) {
+function CartItem({img, title, price}) {
 
     const ImgStyle = {
         width: "120px",
         height: "130px",
     };
     
+    const [totalPrice, setTotalprice] = useState(0);
+
+    function addcart(e) {
+        
+    }
+
     return(
         <StyledDiv price={price}>
-                <input type="checkbox" value={false} />
+                <input type="checkbox" />
                 <img src={img} style={ImgStyle} alt={title} />
                 <StyledSpan>{title}</StyledSpan>
             <StyledSpan style={{
@@ -48,4 +43,4 @@ function Product2({img, title, price}) {
     )
 }
 
-export default Product2;
+export default CartItem;
