@@ -14,24 +14,29 @@ const StyledDiv = styled.div`
 
 const StyledSpan = styled.span`
     margin: 20px;
+    width: 22%;
+    text-align: center;
 `
 
 function CartItem({img, title, price}) {
 
     const ImgStyle = {
+        marginLeft: '3%',
         width: "120px",
         height: "130px",
     };
     
     const [totalPrice, setTotalprice] = useState(0);
+    const [isChecked, setIschecked] = useState(false)
 
-    function addcart(e) {
-        
+    function totalprice(event) {
+        setIschecked(event.target.checked)
+        isChecked ? setTotalprice(totalPrice - price) : setTotalprice(totalPrice + price)
     }
 
     return(
         <StyledDiv price={price}>
-                <input type="checkbox" />
+                <input type="checkbox" value={isChecked} onClick={totalprice} />
                 <img src={img} style={ImgStyle} alt={title} />
                 <StyledSpan>{title}</StyledSpan>
             <StyledSpan style={{
@@ -39,6 +44,7 @@ function CartItem({img, title, price}) {
                 color: '#be2e22',
                 marginLeft: '40px',
             }}>{price}원</StyledSpan>
+            {totalPrice}
         </StyledDiv>
     )
 }

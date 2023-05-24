@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -12,10 +12,9 @@ const StyledButton = styled.button`
     border: 1px solid black
 `
 
-export default function CartPrice() {
+export default function CartPrice({ totalPrice }) {
 
     const navigate = useNavigate();
-    let [totalPrice, setTotalprice] = useState(0);
 
     return(
         <div
