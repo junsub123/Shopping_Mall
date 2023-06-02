@@ -15,18 +15,13 @@ const StyledDiv = styled.div`
 const QunButton = styled.button`
     border: none;
     background-color: white;
-    &:hover{
-        background-color : yellow;
-        color : black
-    }
+    cursor: pointer;
 `
 
 const PutButton = styled.button`
     border: none;
     background-color: white;
-    &:hover{
-        background-color : yellow;
-        color : black
+    cursor: pointer;
     }
 `
 

@@ -9,7 +9,8 @@ const StyledButton = styled.button`
     background-color: gold;
     color: #3B1C1C;
     margin-bottom: 20px;
-    border: 1px solid black
+    border: 1px solid black;
+    cursor: pointer
 `
 
 export default function CartPrice({ totalPrice }) {
@@ -36,7 +37,7 @@ export default function CartPrice({ totalPrice }) {
                         </div>
                     </div>
 
-                    <div style={{ textAlign: 'center', }}>
+                    <div style={{ textAlign: 'center'}}>
                         <h3>총 결제 금액&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{totalPrice}원</h3>
                         <StyledButton onClick={() => {
                             alert("주문을 성공했습니다, 주문해주셔서 감사합니다!");

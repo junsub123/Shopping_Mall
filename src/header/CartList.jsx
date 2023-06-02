@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import CartItem from "./CartItem";
 
 export default function CartList() {
@@ -24,6 +24,8 @@ export default function CartList() {
         }
     ]
 
+    const [totalprice, setTotalprice] = useState(0);
+
     return(
         <div style={{ width: '60%', }}>
 
@@ -37,6 +39,8 @@ export default function CartList() {
                                 price={items.price}
                             />
                         )
+                        setTotalprice(totalprice + items.price);
+                        console.log(totalprice)
                     })}
                 </div>
     )

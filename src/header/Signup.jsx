@@ -25,6 +25,7 @@ const StyledSubmit = styled.input`
     background-color: gold;
     color: #3B1C1C;
     margin-bottom: 20px;
+    border: 1px solid black
 `
 
 

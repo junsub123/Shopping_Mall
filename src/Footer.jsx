@@ -23,11 +23,17 @@ const StyledButton = styled.button`
     cursor: pointer;
 `
 
+const StyledP = styled.p`
+    text-align: center;
+    font-size: 12px;
+    color: rgb(153, 153, 153);
+`
+
 function Footer() {
 
     const style = {
-        marginTop:'70px',
-        border: '1px solid grey',
+        marginTop:'50px',
+        border: '1px solid rgb(247, 247, 247)',
         height: '250px',
     }
 
@@ -64,6 +70,14 @@ function Footer() {
                     <RiInstagramFill size="40" title="인스타그램" color="#E4405F" />&nbsp;&nbsp;
                     <RiYoutubeFill size="40" title="유튜브" color="#c4302b" />&nbsp;&nbsp;
                 </div>
+            </div>
+            <div style={{ 
+                height: '80px',
+                width: '100%',
+                marginTop: '11px',
+                backgroundColor: 'rgb(247, 247, 247)',
+                }}><br />
+                <StyledP>© SHOPPING MALL. ALL RIGHTS RESERVED</StyledP>
             </div>
         </footer>
     )

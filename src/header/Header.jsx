@@ -28,7 +28,7 @@ const CartButton = styled.button`
     margin-left: 220%;
 `
 
-export default function Header() {
+export default function Header({serach,onChange}) {
 
     const style = {
         textDecoration: 'none',
@@ -44,11 +44,10 @@ export default function Header() {
                 marginRight: '18%',
                 marginTop: '5px',
             }}> 
-            {isLogin === false ? <><NavLink to="/login" style={style} isLogin={isLogin}>로그인</NavLink>
+
+            <NavLink to="/login" style={style} isLogin={isLogin}>로그인</NavLink>
             <NavLink to="/signup" style={style}>회원가입</NavLink>
-            <NavLink to="/" style={style}>고객센터</NavLink><br /></> : 
-            <><NavLink to="/login" style={style} isLogin={isLogin}>로그아웃</NavLink>
-            <NavLink to="/" style={style}>고객센터</NavLink><br /></>}
+            <NavLink to="/" style={style}>고객센터</NavLink><br />
                 
 
                 {/* 쇼핑몰 로고 */}
@@ -72,7 +71,7 @@ export default function Header() {
                     border: '2px solid gold',
                     width: '344px'
                 }}>
-                    <StyledInput type="text" placeholder="  원하시는 상품을 검색해보세요." />
+                    <StyledInput type="text" placeholder="  원하시는 상품을 검색해보세요." value={serach} onChange={onChange} />
                     <StyledButton><BsSearch /></StyledButton>
                 </div>
 
