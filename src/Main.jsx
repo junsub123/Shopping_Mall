@@ -14,7 +14,7 @@ function Main(props) {
   return (
     <StlyedBody>
 
-      <Banner />
+      {/* <Banner /> */}
 
       {products.map((product) => {
         return (
