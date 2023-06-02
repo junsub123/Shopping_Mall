@@ -66,9 +66,9 @@ function Footer() {
                     팩스 : 회사에서 안키움
                     </StyledSpan2><br /><br />
 
-                    <RiFacebookBoxFill size="40" title="페이스북" color="#3b5998" />&nbsp;&nbsp;
-                    <RiInstagramFill size="40" title="인스타그램" color="#E4405F" />&nbsp;&nbsp;
-                    <RiYoutubeFill size="40" title="유튜브" color="#c4302b" />&nbsp;&nbsp;
+                    <RiFacebookBoxFill size="40" title="페이스북" color="#3b5998" style={{cursor: 'pointer'}}/>&nbsp;&nbsp;
+                    <RiInstagramFill size="40" title="인스타그램" color="#E4405F" style={{cursor: 'pointer'}}/>&nbsp;&nbsp;
+                    <RiYoutubeFill size="40" title="유튜브" color="#c4302b" style={{cursor: 'pointer'}}/>&nbsp;&nbsp;
                 </div>
             </div>
             <div style={{ 
