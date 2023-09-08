@@ -39,8 +39,6 @@ export default function CartList() {
                                 price={items.price}
                             />
                         )
-                        setTotalprice(totalprice + items.price);
-                        console.log(totalprice)
                     })}
                 </div>
     )

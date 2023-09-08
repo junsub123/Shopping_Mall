@@ -103,7 +103,7 @@ function Signup() {
                             document.getElementById('pwd').focus();
                             setPwdMsg("필수 정보입니다.");
                             setIdMsg("");
-                        } else if (pwd != repwd) {
+                        } else if (pwd !== repwd) {
                             document.getElementById('repwd').focus();
                             setRepwdMsg("비밀번호와 일치하지 않습니다.");
                             setPwdMsg("");

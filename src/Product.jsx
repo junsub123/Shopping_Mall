@@ -25,6 +25,10 @@ const PutButton = styled.button`
     }
 `
 
+function priceToString(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
 function Product({img, title, price}) {
 
     const ImgStyle = {
@@ -42,7 +46,7 @@ function Product({img, title, price}) {
             <span>{title}</span><br />
             <span style={{
                 color: '#be2e22',
-            }}>{_price}원</span><br />
+            }}>{priceToString(_price)}원</span><br />
             <QunButton onClick={() => {
                 setCount(count + 1)
                 setPrice(_price + price)
